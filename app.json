@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "splash":{
+      "image": "./assets/Splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    },
+    "name": "Tailr",
+    "slug": "Tailr",
+    "version": "1.0.0",
+    "enum":"splash.resizeMode",
+    "string":"splash.image",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+
+  },
+  "name": "Tailr"
+  
+
+  
+}

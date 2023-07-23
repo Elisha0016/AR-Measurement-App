@@ -1,6 +1,6 @@
 {
   "expo": {
-    "splash":{
+    "splash": {
       "image": "./assets/Splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#fff"
@@ -8,15 +8,22 @@
     "name": "Tailr",
     "slug": "Tailr",
     "version": "1.0.0",
-    "enum":"splash.resizeMode",
-    "string":"splash.image",
+    "enum": "splash.resizeMode",
+    "string": "splash.image",
     "assetBundlePatterns": [
       "**/*"
-    ]
-
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "cb4a87ca-254b-42dc-94da-d642d20d3d97"
+      }
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/cb4a87ca-254b-42dc-94da-d642d20d3d97"
+    },
+    "android": {},
+    "ios": {}
   },
   "name": "Tailr"
-  
-
-  
 }

@@ -17,11 +17,13 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigation = useNavigation();
 
   const handleSignIn = () => {
     if (email && password) {
       setIsLoading(true);
+      setError("");
       signInWithEmailAndPassword(auth, email, password)
         .then((data) => {
           console.log(data);
@@ -31,6 +33,7 @@ const SignIn = () => {
         .catch((err) => {
           console.log(err);
           setIsLoading(false);
+          setError("Invalid email or password. Please try again."); // Set the error message
         });
     }
   };
@@ -57,6 +60,8 @@ const SignIn = () => {
           style={styles.input}
           secureTextEntry
         />
+
+        {error !== "" && <Text style={styles.errorText}>{error}</Text>}
 
         <View style={styles.buttonContainer}>
           <TouchableOpacity
@@ -142,5 +147,11 @@ const styles = StyleSheet.create({
   },
   directionText: {
     padding: 20,
+  },
+  errorText: {
+    color: "red",
+    fontSize: 16,
+    textAlign: "center",
+    marginTop: 10,
   },
 });

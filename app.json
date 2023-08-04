@@ -7,6 +7,8 @@
     },
     "name": "Tailr",
     "slug": "Tailr",
+    "privacy": "public",
+    "description": "AR Body measurement App.",
     "version": "1.0.0",
     "enum": "splash.resizeMode",
     "string": "splash.image",
@@ -18,7 +20,9 @@
         "projectId": "cb4a87ca-254b-42dc-94da-d642d20d3d97"
       }
     },
-    "runtimeVersion": "1.0.0",
+    "expo": {
+      "runtimeVersion": "1.0.0"
+    },
     "updates": {
       "url": "https://u.expo.dev/cb4a87ca-254b-42dc-94da-d642d20d3d97"
     },

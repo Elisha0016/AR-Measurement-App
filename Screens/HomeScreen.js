@@ -7,8 +7,14 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
+  const handleTakeMeasurement = () => {
+    navigation.navigate("Tutorial"); // Navigate to the "Tutorial" screen
+  };
   return (
     <View style={styles.container}>
       <ScrollView horizontal contentContainerStyle={styles.scrollContainer}>
@@ -42,12 +48,19 @@ const HomeScreen = () => {
         </View>
       </ScrollView>
 
-      <TouchableOpacity
-        onPress={() => console.log("Button Clicked")}
-        style={[styles.button, styles.button]}
-      >
-        <Text style={styles.buttonText}>Take measurement</Text>
-      </TouchableOpacity>
+      <View style={styles.lowerHalf}>
+        <Text style={styles.homeTextHead}>Welcome!</Text>
+        <Text style={styles.homeText}>
+          Body measurement taking has never been easier. Click the button below
+          to start measuring.
+        </Text>
+        <TouchableOpacity
+          onPress={handleTakeMeasurement}
+          style={[styles.button, styles.button]}
+        >
+          <Text style={styles.buttonText}>Take measurement</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -70,13 +83,26 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 5,
     alignItems: "center",
-    justifyContent: "center",
-    alignSelf: "center", // Align the button to the center horizontally
-    position: "relative",
-    bottom: -200, // Adjust the bottom value to control the distance from the bottom
   },
   buttonText: {
     color: "#fff",
+  },
+  homeText: {
+    padding: 20,
+    paddingTop: 10,
+    paddingBottom: 30,
+  },
+  homeTextHead: {
+    padding: 20,
+    paddingBottom: 0.5,
+    fontSize: 70,
+    fontWeight: "bold",
+    color: "#0058AC",
+  },
+  lowerHalf: {
+    padding: 20,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
